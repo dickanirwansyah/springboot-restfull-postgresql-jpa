@@ -9,9 +9,9 @@
  <br/>
  <h3>Cara Menjalankan aplikasi ini</h3>
  <br/>
- <li><p>Buka Editor Intellij IDEA atau Sejenisnya</p></li>
- <li><p>Buka <b>localhost:8081/api/products</b> atau <b>localhost:8080/api/kategoris</b></p></li>
- <li><p>jika error..kesalahan mungkin ada pada komputer anda..dikomputer saya jalan kok :p</p></li>
+ <p><b># </b>Buka Editor Intellij IDEA atau Sejenisnya</p>
+ <p><b># </b>Buka <b>localhost:8081/api/products</b> atau <b>localhost:8080/api/kategoris</b></p>
+ <p><b># </b>jika error..kesalahan mungkin ada pada komputer anda..dikomputer saya jalan kok :p</li>
  <br/>
  <p>Created by : Muhammad Dicka Nirwansyah </p>
 
