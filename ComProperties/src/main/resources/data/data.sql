@@ -18,6 +18,67 @@ create table product(
     match simple on update no action on delete no action
 );
 
+
+
+create table jenis(
+    idjenis serial primary key,
+    kodejenis varchar(255) not null,
+    deskripsi varchar(255) not null
+);
+
+insert into jenis(kodejenis, deskripsi) values('j001', 'Furniture');
+insert into jenis(kodejenis, deskripsi) values('j002', 'Pakaian');
+insert into jenis(kodejenis, deskripsi) values('j003', 'Parfum');
+insert into jenis(kodejenis, deskripsi) values('j004', 'Celana');
+
+create table barang(
+    idbarang serial primary key,
+    kodebarang varchar(255) not null,
+    nama varchar(255) not null,
+    quantity int not null,
+    idjenis int not null,
+    price int not null,
+
+    CONSTRAINT fk_barang_jenis_idjenis FOREIGN KEY(idjenis)
+    REFERENCES jenis(idjenis)
+    match simple on update no action on delete no action
+);
+
+
+insert into barang(kodebarang, nama, quantity, idjenis, price)
+values('b001', 'Beleza', 80, 3, 100000);
+insert into barang(kodebarang, nama, quantity, idjenis, price)
+values('b003', 'Lemari', 4, 1, 5000000);
+insert into barang(kodebarang, nama, quantity, idjenis, price)
+values('b004', 'Jeans', 100, 4, 25000);
+insert into barang(kodebarang, nama, quantity, idjenis, price)
+values('b005', 'Kaos', 80, 3, 80000);
+
+create table transaksi(
+    idtransaksi serial primary key,
+    tanggal_transaksi date not null,
+    idpengguna int not null,
+
+    CONSTRAINT fk_transaksi_idpengguna FOREIGN KEY(idpengguna)
+    REFERENCES pengguna(idpengguna)
+    match simple on update no action on delete no action
+);
+
+
+create table transaksi_detil(
+    iddetil serial primary key,
+    idtransaksi int not null,
+    idbarang int not null,
+    quantity int not null,
+    price int not null,
+
+    CONSTRAINT fk_transaksi_detil_idtransaksi FOREIGN KEY(idtransaksi)
+    REFERENCES transaksi(idtransaksi)
+    match simple on update no action on delete no action,
+    CONSTRAINT fk_transaksi_detil_idbarang FOREIGN KEY(idbarang)
+    REFERENCES barang(idbarang)
+);
+
 insert into product(kodeproduct, nama, deskripsi, actives, tanggal, idkategori)
 values('p001', 'lifebuoy', 'sabun batang', true, '2020-12-01', 1);
 insert into product(kodeproduct, nama, deskripsi, actives, tanggal, idkategori)

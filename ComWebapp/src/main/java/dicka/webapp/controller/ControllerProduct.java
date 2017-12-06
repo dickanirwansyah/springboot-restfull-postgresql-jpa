@@ -52,7 +52,7 @@ public class ControllerProduct {
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
-    @PutMapping(value = "/updateProduct/{idproduct}")
+    @PostMapping(value = "/updateProduct/{idproduct}")
     public ResponseEntity<Product>updateProduct(@PathVariable String idproduct,
                                                 @RequestBody Product product){
         LOGGER.info("access update product");

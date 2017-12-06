@@ -12,7 +12,6 @@
     <artifactId>Com-DAO</artifactId>
     <packaging>jar</packaging>
 
-
     <dependencies>
         <!--Com-Model-->
         <dependency>

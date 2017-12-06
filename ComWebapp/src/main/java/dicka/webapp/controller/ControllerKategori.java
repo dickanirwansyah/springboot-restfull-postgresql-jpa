@@ -2,7 +2,6 @@ package dicka.webapp.controller;
 
 import dicka.dao.DAOKategori;
 import dicka.model.Kategori;
-import dicka.services.ServiceKategori;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +53,24 @@ public class ControllerKategori {
         headers.setLocation(builder.path("/insertKategori/{idkategori}")
                 .buildAndExpand(kategori.getIdkategori()).toUri());
         return new ResponseEntity<Kategori>(headers, HttpStatus.CREATED);
+    }
+
+    @PostMapping(value = "/updateKategori/{idkategori}")
+    public ResponseEntity<Kategori>updateKategori(@PathVariable String idkategori,
+                                                  @RequestBody Kategori kategori){
+
+        LOGGER.debug("access update kategori");
+        Kategori datakategori = daoKategori.findOneKategori(Integer.parseInt(idkategori));
+        if(datakategori == null){
+            LOGGER.debug("data not found !");
+            return new ResponseEntity<Kategori>(HttpStatus.BAD_REQUEST);
+        }
+
+        datakategori.setDeskripsi(kategori.getDeskripsi());
+        datakategori.setNama(kategori.getNama());
+        daoKategori.updateKategori(datakategori);
+
+        return new ResponseEntity<Kategori>(datakategori, HttpStatus.CREATED);
     }
 
     @GetMapping(value = "/kategoris/{idkategori}")

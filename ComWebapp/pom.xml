@@ -26,6 +26,13 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+        <!--Com-Config-->
+        <dependency>
+            <groupId>com.dicka.springboot</groupId>
+            <artifactId>ComConfig</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <!--Com-Model-->
         <dependency>
             <groupId>com.dicka.springboot</groupId>

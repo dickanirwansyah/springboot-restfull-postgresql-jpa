@@ -13,6 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan(basePackages = {"dicka.model",
         "dicka.repository",
         "dicka.dao",
+        "dicka.config",
         "dicka.services",
         "dicka.webapp.*"})
 public class SpringBootMain {
