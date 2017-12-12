@@ -22,15 +22,27 @@ create table pengguna(
 );
 
 insert into pengguna(nama, idrole, actives, username, password, tanggal_lahir, alamat)
-values ('Muhammad dicka nirwansyah', 1, 1, 'dickanirwansyah', 'root123',
+values ('aqsam', 1, 1, 'aqsam', 'root123',
 '1996-03-19', 'cilandak');
 
 insert into pengguna(nama, idrole, actives, username, password, tanggal_lahir, alamat)
-values ('Sita sinthya', 2, 1, 'sitasinthya', 'root123',
+values ('joan', 1, 1, 'joan', 'root123',
+'1996-03-19', 'cilandak');
+
+insert into pengguna(nama, idrole, actives, username, password, tanggal_lahir, alamat)
+values ('sabrina', 1, 1, 'sabrina', 'root123',
+'1996-03-19', 'cilandak');
+
+insert into pengguna(nama, idrole, actives, username, password, tanggal_lahir, alamat)
+values ('Sita', 2, 1, 'sita', 'root123',
 '1996-03-19', 'ciputat');
 
 insert into pengguna(nama, idrole, actives, username, password, tanggal_lahir, alamat)
-values ('Denada Rosa', 1, 1, 'denaflorina', 'root123',
+values ('Dena', 1, 1, 'dena', 'root123',
+'1996-03-19', 'ciputat');
+
+insert into pengguna(nama, idrole, actives, username, password, tanggal_lahir, alamat)
+values ('Alif', 1, 1, 'alif', 'root123',
 '1996-03-19', 'ciputat');
 
 create table pengguna_role(
